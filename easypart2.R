@@ -1,6 +1,6 @@
 library(XML) 
 library(RCurl) 
-#Sys.setenv(http_proxy="http://10.3.100.207:8080")
+Sys.setenv(http_proxy="http://10.3.100.207:8080")
 
 url <- "https://www.abdb-africa.org/genus/Papilio"
 
@@ -31,11 +31,11 @@ for(i in 1:length(pos))
   if(i == length(pos))
   {
     # precision at last part of the string so pos2 has been created
-    storenames[i] <- substr(listSpecies,pos[i],pos2[length(pos2)]+5)
+    storenames[i] <- substr(string2,pos[i],pos2[length(pos2)]+5)
   }
   else
-  storenames[i] <- substr(listSpecies,pos[i],pos[i+1]-1)
+  storenames[i] <- substr(string2,pos[i],pos[i+1]-1)
   
 }
-
+storenames
 
