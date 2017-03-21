@@ -18,7 +18,7 @@
   y <- data.frame(y)
   distributionlist <- character(length(y$start))
   for(i in 1:length(y$start))
-  distributionlist[i] <- substr(stringnew,y$start[i],y$end[i]-2)
+  distributionlist[i] <- substr(stringnew,y$start[i],y$end[i]-1)
    
   distributionlist <- gsub("^Distribution: ","",distributionlist)
   finaldata <- data.frame("NAME"= NAMES , "DISTRIBUTION"= distributionlist)

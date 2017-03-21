@@ -19,11 +19,11 @@ tocsv <- function(textfile){
   y <- data.frame(y)
   distributionlist <- character(length(y$start))
   for(i in 1:length(y$start))
-    distributionlist[i] <- substr(stringnew,y$start[i],y$end[i]-2)
+    distributionlist[i] <- substr(stringnew,y$start[i],y$end[i]-1)
   
   distributionlist <- gsub("^Distribution: ","",distributionlist)
   finaldata2 <- data.frame("NAME"= NAMES , "DISTRIBUTION"= distributionlist)
-  #write.csv(finaldata2,"abc.csv")
+  write.csv(finaldata2,"hardpart2.csv")
   finaldata2
   
 }
